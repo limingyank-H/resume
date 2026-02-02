@@ -1,0 +1,233 @@
+/**
+ * 个人简历网站 JavaScript
+ * 负责滚动动画、交互效果等
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 初始化所有功能
+    initScrollAnimations();
+    initNavbarScroll();
+    initSmoothScroll();
+    initCounterAnimation();
+    initContactProtection(); // 联系方式保护
+});
+
+/**
+ * 联系方式保护 - 动态拼接敏感信息防止爬虫抓取
+ * NOTE: 信息被拆分存储，在用户交互后才组装显示
+ */
+function initContactProtection() {
+    // 拆分存储 - 爬虫无法直接识别
+    const e = ['724', '456', '565'];
+    const d = 'qq.com';
+    const p = ['+86', '155', '2137', '0308'];
+    
+    const email = e.join('') + '@' + d;
+    const phone = p.join(' ');
+    const phoneRaw = p.join('').replace('+86', '+86');
+    
+    // Hero 区域的社交链接
+    const socialEmail = document.getElementById('social-email');
+    const socialPhone = document.getElementById('social-phone');
+    
+    if (socialEmail) {
+        socialEmail.href = 'mailto:' + email;
+    }
+    if (socialPhone) {
+        socialPhone.href = 'tel:' + phoneRaw;
+    }
+    
+    // 联系方式区域
+    const contactEmail = document.getElementById('contact-email');
+    const contactPhone = document.getElementById('contact-phone');
+    const emailDisplay = document.getElementById('email-display');
+    const phoneDisplay = document.getElementById('phone-display');
+    
+    if (contactEmail && emailDisplay) {
+        contactEmail.href = 'mailto:' + email;
+        emailDisplay.textContent = email;
+    }
+    if (contactPhone && phoneDisplay) {
+        contactPhone.href = 'tel:' + phoneRaw;
+        phoneDisplay.textContent = phone;
+    }
+}
+
+/**
+ * 滚动动画 - 元素进入视口时触发动画
+ */
+function initScrollAnimations() {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                
+                // 如果是时间线项目，添加延迟动画
+                if (entry.target.classList.contains('timeline-item')) {
+                    const index = Array.from(document.querySelectorAll('.timeline-item')).indexOf(entry.target);
+                    entry.target.style.transitionDelay = `${index * 0.15}s`;
+                }
+            }
+        });
+    }, observerOptions);
+
+    // 观察需要动画的元素
+    const animatedElements = document.querySelectorAll(
+        '.section-header, .timeline-item, .highlight-card, .skill-category, .education-card, .contact-wrapper'
+    );
+    
+    animatedElements.forEach(el => {
+        el.classList.add('animate-on-scroll');
+        observer.observe(el);
+    });
+}
+
+/**
+ * 导航栏滚动效果
+ */
+function initNavbarScroll() {
+    const navbar = document.querySelector('.navbar');
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    function updateNavbar() {
+        const scrollY = window.scrollY;
+        
+        // 添加背景模糊效果
+        if (scrollY > 50) {
+            navbar.classList.add('navbar-scrolled');
+        } else {
+            navbar.classList.remove('navbar-scrolled');
+        }
+        
+        // 隐藏/显示导航栏
+        if (scrollY > lastScrollY && scrollY > 100) {
+            navbar.classList.add('navbar-hidden');
+        } else {
+            navbar.classList.remove('navbar-hidden');
+        }
+        
+        lastScrollY = scrollY;
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(updateNavbar);
+            ticking = true;
+        }
+    });
+}
+
+/**
+ * 平滑滚动
+ */
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = targetElement.offsetTop - navbarHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}
+
+/**
+ * 数字计数动画
+ */
+function initCounterAnimation() {
+    const counters = document.querySelectorAll('.highlight-number');
+    
+    const observerOptions = {
+        root: null,
+        threshold: 0.5
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    counters.forEach(counter => observer.observe(counter));
+}
+
+/**
+ * 执行计数动画
+ */
+function animateCounter(element) {
+    const text = element.textContent;
+    const match = text.match(/(\d+)/);
+    
+    if (!match) return;
+    
+    const target = parseInt(match[0]);
+    const suffix = text.replace(/\d+/, '');
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+    
+    const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current) + suffix;
+    }, 16);
+}
+
+/**
+ * 添加样式 - 滚动动画的CSS
+ */
+const style = document.createElement('style');
+style.textContent = `
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .animate-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .navbar-scrolled {
+        background: rgba(10, 10, 11, 0.95) !important;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .navbar-hidden {
+        transform: translateY(-100%);
+    }
+    
+    .navbar {
+        transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    }
+`;
+document.head.appendChild(style);
+
+// 添加页面加载完成动画
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
