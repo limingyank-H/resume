@@ -1412,6 +1412,7 @@ img {
         max-width: 100%;
         margin-top: 0;
         order: 2;
+        text-align: center;
     }
 
     .hero-buttons {
@@ -1433,6 +1434,19 @@ img {
 
     .stat-card {
         text-align: center;
+    }
+
+    .stat-label,
+    .stat-title,
+    .stat-desc,
+    .stat-link {
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+
+    .stat-link {
+        justify-content: center;
     }
 }
 
