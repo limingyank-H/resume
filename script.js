@@ -3,7 +3,7 @@
  * 负责滚动动画、交互效果等
  */
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // 初始化所有功能
     initScrollAnimations();
     initNavbarScroll();
@@ -21,28 +21,28 @@ function initContactProtection() {
     const e = ['724', '456', '565'];
     const d = 'qq.com';
     const p = ['+86', '155', '2137', '0308'];
-    
+
     const email = e.join('') + '@' + d;
     const phone = p.join(' ');
     const phoneRaw = p.join('').replace('+86', '+86');
-    
+
     // Hero 区域的社交链接
     const socialEmail = document.getElementById('social-email');
     const socialPhone = document.getElementById('social-phone');
-    
+
     if (socialEmail) {
         socialEmail.href = 'mailto:' + email;
     }
     if (socialPhone) {
         socialPhone.href = 'tel:' + phoneRaw;
     }
-    
+
     // 联系方式区域
     const contactEmail = document.getElementById('contact-email');
     const contactPhone = document.getElementById('contact-phone');
     const emailDisplay = document.getElementById('email-display');
     const phoneDisplay = document.getElementById('phone-display');
-    
+
     if (contactEmail && emailDisplay) {
         contactEmail.href = 'mailto:' + email;
         emailDisplay.textContent = email;
@@ -67,7 +67,7 @@ function initScrollAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                
+
                 // 如果是时间线项目，添加延迟动画
                 if (entry.target.classList.contains('timeline-item')) {
                     const index = Array.from(document.querySelectorAll('.timeline-item')).indexOf(entry.target);
@@ -81,7 +81,7 @@ function initScrollAnimations() {
     const animatedElements = document.querySelectorAll(
         '.section-header, .timeline-item, .highlight-card, .skill-category, .education-card, .contact-wrapper'
     );
-    
+
     animatedElements.forEach(el => {
         el.classList.add('animate-on-scroll');
         observer.observe(el);
@@ -98,21 +98,21 @@ function initNavbarScroll() {
 
     function updateNavbar() {
         const scrollY = window.scrollY;
-        
+
         // 添加背景模糊效果
         if (scrollY > 50) {
             navbar.classList.add('navbar-scrolled');
         } else {
             navbar.classList.remove('navbar-scrolled');
         }
-        
+
         // 隐藏/显示导航栏
         if (scrollY > lastScrollY && scrollY > 100) {
             navbar.classList.add('navbar-hidden');
         } else {
             navbar.classList.remove('navbar-hidden');
         }
-        
+
         lastScrollY = scrollY;
         ticking = false;
     }
@@ -130,15 +130,15 @@ function initNavbarScroll() {
  */
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
                 const navbarHeight = document.querySelector('.navbar').offsetHeight;
                 const targetPosition = targetElement.offsetTop - navbarHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -153,12 +153,12 @@ function initSmoothScroll() {
  */
 function initCounterAnimation() {
     const counters = document.querySelectorAll('.highlight-number');
-    
+
     const observerOptions = {
         root: null,
         threshold: 0.5
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -167,7 +167,7 @@ function initCounterAnimation() {
             }
         });
     }, observerOptions);
-    
+
     counters.forEach(counter => observer.observe(counter));
 }
 
@@ -177,15 +177,15 @@ function initCounterAnimation() {
 function animateCounter(element) {
     const text = element.textContent;
     const match = text.match(/(\d+)/);
-    
+
     if (!match) return;
-    
+
     const target = parseInt(match[0]);
     const suffix = text.replace(/\d+/, '');
     const duration = 2000;
     const step = target / (duration / 16);
     let current = 0;
-    
+
     const timer = setInterval(() => {
         current += step;
         if (current >= target) {
@@ -230,4 +230,42 @@ document.head.appendChild(style);
 // 添加页面加载完成动画
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
+});
+
+/**
+ * 视频弹窗功能
+ */
+function openVideoModal(videoSrc) {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('modalVideo');
+    const source = document.getElementById('modalVideoSource');
+
+    source.src = videoSrc;
+    video.load();
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeVideoModal(event) {
+    // 如果点击的是视频内容区域则不关闭
+    if (event.target.closest('.video-modal-content') && !event.target.classList.contains('video-modal-close')) {
+        return;
+    }
+
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('modalVideo');
+
+    video.pause();
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// ESC 键关闭弹窗
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const modal = document.getElementById('videoModal');
+        if (modal && modal.classList.contains('active')) {
+            closeVideoModal(e);
+        }
+    }
 });

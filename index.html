@@ -64,7 +64,7 @@
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </a>
-                    <a href="other/resume/严黎明-产品经理-简历.pdf" class="btn btn-secondary" download>
+                    <a href="other/resume/严黎明-产品经理-简历（new）.pdf" class="btn btn-secondary" download>
                         下载简历
                         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
@@ -87,7 +87,7 @@
                         擅长用户运营平台搭建、SCRM系统规划，<br>
                         以数据驱动实现业务增长与效率提升。
                     </p>
-                    <a href="other/resume/严黎明-产品经理-简历.pdf" class="stat-link" download>
+                    <a href="other/resume/严黎明-产品经理-简历（new）.pdf" class="stat-link" download>
                         下载简历
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
@@ -314,25 +314,22 @@
                             <div class="product-showcase">
                                 <h4 class="showcase-title">产品展示</h4>
                                 <div class="video-grid">
-                                    <div class="video-card">
-                                        <div class="video-wrapper">
-                                            <video controls preload="metadata" poster="other/image/tvcbook-cover.jpg">
-                                                <source src="other/project/tvcbook/video/优视云集-V6-Leon.mp4"
-                                                    type="video/mp4">
-                                                您的浏览器不支持 HTML5 视频。
-                                            </video>
+                                    <div class="video-card"
+                                        onclick="openVideoModal('other/project/tvcbook/video/优视云集-V6-Leon.mp4')">
+                                        <div class="video-thumbnail">
+                                            <img src="other/project/tvcbook/video/tb-bg.png" alt="优视云集">
+                                            <div class="play-button">▶</div>
                                         </div>
                                         <div class="video-info">
                                             <span class="video-name">优视云集 - 产品演示</span>
                                             <span class="video-tag">SaaS平台</span>
                                         </div>
                                     </div>
-                                    <div class="video-card">
-                                        <div class="video-wrapper">
-                                            <video controls preload="metadata" poster="other/image/yitui-cover.jpg">
-                                                <source src="other/project/tvcbook/video/易推-V09.mp4" type="video/mp4">
-                                                您的浏览器不支持 HTML5 视频。
-                                            </video>
+                                    <div class="video-card"
+                                        onclick="openVideoModal('other/project/tvcbook/video/易推-V09.mp4')">
+                                        <div class="video-thumbnail">
+                                            <img src="other/project/tvcbook/video/yt-bg.png" alt="易推">
+                                            <div class="play-button">▶</div>
                                         </div>
                                         <div class="video-info">
                                             <span class="video-name">易推 - APP演示</span>
@@ -515,6 +512,16 @@
             </div>
         </div>
     </section>
+
+    <!-- 视频弹窗模态框 -->
+    <div id="videoModal" class="video-modal" onclick="closeVideoModal(event)">
+        <div class="video-modal-content">
+            <button class="video-modal-close" onclick="closeVideoModal(event)">&times;</button>
+            <video id="modalVideo" controls>
+                <source id="modalVideoSource" src="" type="video/mp4">
+            </video>
+        </div>
+    </div>
 
     <!-- 页脚 -->
     <footer class="footer">
