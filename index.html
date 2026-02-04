@@ -12,6 +12,14 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 埋点 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-48KJ0V7ZVY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-48KJ0V7ZVY');
+    </script>
 </head>
 
 <body>
@@ -130,6 +138,30 @@
                         我专注于产品全生命周期规划与设计，注重用户体验优化，擅长复杂系统搭建与跨部门协作资源整合。
                         持有 <span class="badge">PMP认证 (5A)</span>，具备扎实的项目管理实战能力。
                     </p>
+                    <!-- Logo 墙 -->
+                    <div class="logo-wall">
+                        <div class="logo-item" data-name="UBER 优步">
+                            <img src="other/image/logo/uber.png" alt="UBER">
+                        </div>
+                        <div class="logo-item" data-name="TVCBOOK 优视云集">
+                            <img src="other/image/logo/TVCBOOK.png" alt="TVCBOOK">
+                        </div>
+                        <div class="logo-item" data-name="阿里巴巴·灵犀互娱">
+                            <img src="other/image/logo/灵犀互娱.png" alt="灵犀互娱">
+                        </div>
+                        <div class="logo-item" data-name="哈尔滨工业大学">
+                            <img src="other/image/logo/哈尔滨工业大学.png" alt="哈尔滨工业大学">
+                        </div>
+                        <div class="logo-item" data-name="华南师范大学">
+                            <img src="other/image/logo/华南师范大学.png" alt="华南师范大学">
+                        </div>
+                        <div class="logo-item" data-name="Enactus 创行">
+                            <img src="other/image/logo/enactus.png" alt="Enactus">
+                        </div>
+                        <div class="logo-item" data-name="金狮奖">
+                            <img src="other/image/logo/金狮奖.png" alt="金狮奖">
+                        </div>
+                    </div>
                 </div>
                 <div class="about-highlights">
                     <div class="highlight-card">
@@ -170,8 +202,11 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-company">
-                                <h3>阿里巴巴·灵犀互娱</h3>
-                                <span class="timeline-role">产品经理 (To B)</span>
+                                <img src="other/image/logo/灵犀互娱.png" alt="灵犀互娱" class="company-logo">
+                                <div class="company-info">
+                                    <h3>阿里巴巴·灵犀互娱</h3>
+                                    <span class="timeline-role">产品经理 (To B)</span>
+                                </div>
                             </div>
                             <div class="timeline-meta">
                                 <span class="timeline-date">2022.02 - 至今</span>
@@ -223,11 +258,14 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-company">
-                                <h3>TVCBOOK (优视云集)</h3>
-                                <span class="timeline-role">产品经理</span>
+                                <img src="other/image/logo/TVCBOOK.png" alt="TVCBOOK" class="company-logo">
+                                <div class="company-info">
+                                    <h3>TVCBOOK (优视云集)</h3>
+                                    <span class="timeline-role">产品经理 (ToB & ToC)</span>
+                                </div>
                             </div>
                             <div class="timeline-meta">
-                                <span class="timeline-date">2019.04 - 2021.05</span>
+                                <span class="timeline-date">2016.08 - 2022.02</span>
                                 <span class="timeline-location">广州</span>
                             </div>
                         </div>
@@ -261,6 +299,13 @@
                                     <div class="achievement-content">
                                         <h4>高新技术企业认证</h4>
                                         <p>主导申请15项软件著作权，获得政府补贴80万元</p>
+                                    </div>
+                                </div>
+                                <div class="achievement">
+                                    <div class="achievement-icon">🏆</div>
+                                    <div class="achievement-content">
+                                        <h4>"金狮奖"线上报奖系统</h4>
+                                        <p>实现大型活动全流程线上化（上传、编辑、报名、付款、评奖）</p>
                                     </div>
                                 </div>
                             </div>
@@ -308,8 +353,11 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-company">
-                                <h3>UBER 优步</h3>
-                                <span class="timeline-role">市场营销专员</span>
+                                <img src="other/image/logo/uber.png" alt="Uber" class="company-logo">
+                                <div class="company-info">
+                                    <h3>UBER 优步</h3>
+                                    <span class="timeline-role">市场营销专员</span>
+                                </div>
                             </div>
                             <div class="timeline-meta">
                                 <span class="timeline-date">2015.04 - 2016.08</span>
@@ -360,6 +408,10 @@
                         <div class="skill-item">
                             <span class="skill-name">AI Agent搭建</span>
                             <span class="skill-desc">智能化工具</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Vibe Coding</span>
+                            <span class="skill-desc">AI辅助编程</span>
                         </div>
                     </div>
                 </div>
@@ -412,7 +464,9 @@
             </div>
             <div class="education-grid">
                 <div class="education-card">
-                    <div class="education-icon">🎓</div>
+                    <div class="education-icon education-logo">
+                        <img src="other/image/logo/哈尔滨工业大学.png" alt="哈尔滨工业大学">
+                    </div>
                     <div class="education-content">
                         <h3>哈尔滨工业大学</h3>
                         <p class="education-degree">MBA - 硕士</p>
@@ -420,7 +474,9 @@
                     </div>
                 </div>
                 <div class="education-card">
-                    <div class="education-icon">🎨</div>
+                    <div class="education-icon education-logo">
+                        <img src="other/image/logo/华南师范大学.png" alt="华南师范大学">
+                    </div>
                     <div class="education-content">
                         <h3>华南师范大学</h3>
                         <p class="education-degree">动漫设计与制作</p>
