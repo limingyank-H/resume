@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
  */
 function initContactProtection() {
     // 拆分存储 - 爬虫无法直接识别
-    const e = ['724', '456', '565'];
-    const d = 'qq.com';
+    const e = ['liming', '.', 'yank'];
+    const d = 'gmail.com';
     const p = ['+86', '155', '2137', '0308'];
 
     const email = e.join('') + '@' + d;
@@ -44,8 +44,23 @@ function initContactProtection() {
     const phoneDisplay = document.getElementById('phone-display');
 
     if (contactEmail && emailDisplay) {
-        contactEmail.href = 'mailto:' + email;
+        contactEmail.href = 'javascript:void(0)'; // 防止页面跳转
         emailDisplay.textContent = email;
+
+        // 点击复制功能
+        contactEmail.addEventListener('click', function (e) {
+            e.preventDefault();
+            navigator.clipboard.writeText(email).then(() => {
+                const originalText = emailDisplay.textContent;
+                emailDisplay.textContent = '已复制到剪贴板！';
+                emailDisplay.style.color = 'var(--primary)';
+
+                setTimeout(() => {
+                    emailDisplay.textContent = originalText;
+                    emailDisplay.style.color = '';
+                }, 2000);
+            });
+        });
     }
     if (contactPhone && phoneDisplay) {
         contactPhone.href = 'tel:' + phoneRaw;
