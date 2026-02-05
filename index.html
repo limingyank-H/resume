@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" id="html-root">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>严黎明 | 产品经理</title>
-    <meta name="description" content="严黎明（LeonYim）- 9年互联网产品与项目管理经验，专注ToB SaaS产品规划与用户运营系统搭建">
+    <title data-i18n="page.title">严黎明 | 产品经理</title>
+    <meta name="description" data-i18n-attr="content" data-i18n="page.description"
+        content="严黎明（LeonYim）- 9年互联网产品与项目管理经验，专注ToB SaaS产品规划与用户运营系统搭建">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -30,10 +31,14 @@
             <span class="logo-dot"></span>
         </div>
 
-        <button class="nav-menu-btn" id="menuBtn">
-            <span></span>
-            <span></span>
-        </button>
+        <div class="nav-actions">
+            <!-- 语言切换按钮 -->
+            <button class="lang-switch" id="langSwitch" title="Switch Language">
+                <span class="lang-label" data-lang="zh">中</span>
+                <span class="lang-divider">/</span>
+                <span class="lang-label active" data-lang="en">EN</span>
+            </button>
+        </div>
     </nav>
 
     <!-- Hero 区域 - 融合布局设计 -->
@@ -47,25 +52,22 @@
         <div class="hero-content-layer">
             <!-- 左侧主要内容 -->
             <div class="hero-main">
-                <p class="hero-greeting animate-fade-in">你好，我是</p>
+                <p class="hero-greeting animate-fade-in" data-i18n="hero.greeting">你好，我是</p>
                 <h1 class="hero-name animate-fade-in-delay">
-                    <span class="name-highlight">严黎明</span>
+                    <span class="name-highlight" data-i18n="hero.name">严黎明</span>
                     <span class="name-en">LeonYim</span>
                 </h1>
-                <h2 class="hero-title animate-fade-in-delay-2">产品经理</h2>
-                <p class="hero-desc animate-fade-in-delay-3">
-                    9年互联网产品与项目管理经验<br>
-                    专注 ToB SaaS 产品规划与用户运营系统搭建
-                </p>
+                <h2 class="hero-title animate-fade-in-delay-2" data-i18n="hero.title">产品经理</h2>
+                <p class="hero-desc animate-fade-in-delay-3" data-i18n="hero.desc"></p>
                 <div class="hero-buttons animate-fade-in-delay-3">
                     <a href="#contact" class="btn btn-primary">
-                        联系我
+                        <span data-i18n="hero.contact">联系我</span>
                         <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </a>
-                    <a href="other/resume/严黎明-产品经理-简历（new）.pdf" class="btn btn-secondary" download>
-                        下载简历
+                    <a href="other/resume/严黎明-产品经理-简历（new）.pdf" class="btn btn-secondary" download id="downloadBtn">
+                        <span data-i18n="hero.download">下载简历</span>
                         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
                         </svg>
@@ -77,18 +79,15 @@
             <div class="hero-aside">
 
                 <div class="stat-card animate-fade-in-right">
-                    <span class="stat-label">专注领域</span>
+                    <span class="stat-label" data-i18n="aside.label">专注领域</span>
                     <h3 class="stat-title">
-                        <span class="title-line">扎根互联网行业</span>
-                        <span class="title-line">专注 <em>ToB SaaS</em></span>
-                        <span class="title-line">产品设计与运营</span>
+                        <span class="title-line" data-i18n="aside.line1">扎根互联网行业</span>
+                        <span class="title-line" data-i18n="aside.line2">专注 <em>ToB SaaS</em></span>
+                        <span class="title-line" data-i18n="aside.line3">产品设计与运营</span>
                     </h3>
-                    <p class="stat-desc">
-                        擅长用户运营平台搭建、SCRM系统规划，<br>
-                        以数据驱动实现业务增长与效率提升。
-                    </p>
-                    <a href="other/resume/严黎明-产品经理-简历（new）.pdf" class="stat-link" download>
-                        下载简历
+                    <p class="stat-desc" data-i18n="aside.desc"></p>
+                    <a href="other/resume/严黎明-产品经理-简历（new）.pdf" class="stat-link" download id="downloadLink">
+                        <span data-i18n="hero.download">下载简历</span>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
@@ -100,7 +99,7 @@
 
         <!-- 底部元素 -->
         <div class="hero-scroll-hint">
-            <span>向下滚动</span>
+            <span data-i18n="hero.scroll">向下滚动</span>
             <div class="scroll-line"></div>
         </div>
         <!-- 社交链接 -->
@@ -125,19 +124,12 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-number">01</span>
-                <h2 class="section-title">关于我</h2>
+                <h2 class="section-title" data-i18n="about.title">关于我</h2>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p class="about-intro">
-                        从 <span class="highlight">UBER</span> 的市场运营起步，深入 <span class="highlight">TVCBOOK</span>
-                        的影视广告项目与平台产品规划，
-                        再到 <span class="highlight">阿里巴巴·灵犀互娱</span> 聚焦 ToB 产品规划与运营系统搭建。
-                    </p>
-                    <p class="about-detail">
-                        我专注于产品全生命周期规划与设计，注重用户体验优化，擅长复杂系统搭建与跨部门协作资源整合。
-                        持有 <span class="badge">PMP认证 (5A)</span>，具备扎实的项目管理实战能力。
-                    </p>
+                    <p class="about-intro" data-i18n="about.intro"></p>
+                    <p class="about-detail" data-i18n="about.detail"></p>
                     <!-- Logo 墙 -->
                     <div class="logo-wall">
                         <div class="logo-item" data-name="UBER 优步">
@@ -166,19 +158,19 @@
                 <div class="about-highlights">
                     <div class="highlight-card">
                         <div class="highlight-number">9+</div>
-                        <div class="highlight-label">年产品经验</div>
+                        <div class="highlight-label" data-i18n="about.stat1">年产品经验</div>
                     </div>
                     <div class="highlight-card">
                         <div class="highlight-number">15</div>
-                        <div class="highlight-label">项软件著作权</div>
+                        <div class="highlight-label" data-i18n="about.stat2">项软件著作权</div>
                     </div>
                     <div class="highlight-card">
                         <div class="highlight-number">90%</div>
-                        <div class="highlight-label">业务线上化</div>
+                        <div class="highlight-label" data-i18n="about.stat3">业务线上化</div>
                     </div>
                     <div class="highlight-card">
                         <div class="highlight-number">47%</div>
-                        <div class="highlight-label">ROI提升</div>
+                        <div class="highlight-label" data-i18n="about.stat4">ROI提升</div>
                     </div>
                 </div>
             </div>
@@ -190,7 +182,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-number">02</span>
-                <h2 class="section-title">工作经历</h2>
+                <h2 class="section-title" data-i18n="exp.title">工作经历</h2>
             </div>
             <div class="timeline">
                 <!-- 阿里巴巴 -->
@@ -204,44 +196,45 @@
                             <div class="timeline-company">
                                 <img src="other/image/logo/灵犀互娱.png" alt="灵犀互娱" class="company-logo">
                                 <div class="company-info">
-                                    <h3>阿里巴巴·灵犀互娱</h3>
-                                    <span class="timeline-role">产品经理 (To B)</span>
+                                    <h3 data-i18n="exp.ali.name">阿里巴巴·灵犀互娱</h3>
+                                    <span class="timeline-role" data-i18n="exp.ali.role">产品经理 (To B)</span>
                                 </div>
                             </div>
                             <div class="timeline-meta">
-                                <span class="timeline-date">2022.02 - 至今</span>
-                                <span class="timeline-location">广州</span>
+                                <span class="timeline-date" data-i18n="exp.ali.date">2022.02 - 至今</span>
+                                <span class="timeline-location" data-i18n="exp.ali.location">广州</span>
                             </div>
                         </div>
                         <div class="timeline-body">
-                            <p class="timeline-summary">围绕VIP用户全生命周期，打造线上VIP用户运营系统</p>
+                            <p class="timeline-summary" data-i18n="exp.ali.summary">围绕VIP用户全生命周期，打造线上VIP用户运营系统</p>
                             <div class="timeline-achievements">
                                 <div class="achievement">
                                     <div class="achievement-icon">🚀</div>
                                     <div class="achievement-content">
-                                        <h4>VIP运营平台从0到1</h4>
-                                        <p>主导 ToB SaaS SCRM 系统规划与落地，实现核心业务流程线上化，策略优化周期从双周缩短至3天</p>
+                                        <h4 data-i18n="exp.ali.ach1.title">VIP运营平台从0到1</h4>
+                                        <p data-i18n="exp.ali.ach1.desc">主导 ToB SaaS SCRM
+                                            系统规划与落地，实现核心业务流程线上化，策略优化周期从双周缩短至3天</p>
                                     </div>
                                 </div>
                                 <div class="achievement">
                                     <div class="achievement-icon">📈</div>
                                     <div class="achievement-content">
-                                        <h4>服务效率与ROI显著提升</h4>
-                                        <p>用户维系ROI提升28%，消息处理ROI提升47%，5分钟回复率从85%提升至92%</p>
+                                        <h4 data-i18n="exp.ali.ach2.title">服务效率与ROI显著提升</h4>
+                                        <p data-i18n="exp.ali.ach2.desc">用户维系ROI提升28%，消息处理ROI提升47%，5分钟回复率从85%提升至92%</p>
                                     </div>
                                 </div>
                                 <div class="achievement">
                                     <div class="achievement-icon">🤖</div>
                                     <div class="achievement-content">
-                                        <h4>AI智能外呼系统</h4>
-                                        <p>触达能力提升百倍，成本降至0.23元/次(降幅98%)，周年庆触达460万用户</p>
+                                        <h4 data-i18n="exp.ali.ach3.title">AI智能外呼系统</h4>
+                                        <p data-i18n="exp.ali.ach3.desc">触达能力提升百倍，成本降至0.23元/次(降幅98%)，周年庆触达460万用户</p>
                                     </div>
                                 </div>
                                 <div class="achievement">
                                     <div class="achievement-icon">🔗</div>
                                     <div class="achievement-content">
-                                        <h4>私域建联规模化</h4>
-                                        <p>建联用户量38万(增长196%)，服务成本降至0.19元/月(降幅89%)</p>
+                                        <h4 data-i18n="exp.ali.ach4.title">私域建联规模化</h4>
+                                        <p data-i18n="exp.ali.ach4.desc">建联用户量38万(增长196%)，服务成本降至0.19元/月(降幅89%)</p>
                                     </div>
                                 </div>
                             </div>
@@ -260,52 +253,52 @@
                             <div class="timeline-company">
                                 <img src="other/image/logo/TVCBOOK.png" alt="TVCBOOK" class="company-logo">
                                 <div class="company-info">
-                                    <h3>TVCBOOK (优视云集)</h3>
-                                    <span class="timeline-role">产品经理 (ToB & ToC)</span>
+                                    <h3 data-i18n="exp.tvc.name">TVCBOOK (优视云集)</h3>
+                                    <span class="timeline-role" data-i18n="exp.tvc.role">产品经理 (ToB & ToC)</span>
                                 </div>
                             </div>
                             <div class="timeline-meta">
                                 <span class="timeline-date">2016.08 - 2022.02</span>
-                                <span class="timeline-location">广州</span>
+                                <span class="timeline-location" data-i18n="exp.tvc.location">广州</span>
                             </div>
                         </div>
                         <div class="timeline-body">
-                            <p>负责TVCBOOK平台及相关SaaS产品的规划与设计，推动产品从0到1的建设与迭代。</p>
+                            <p data-i18n="exp.tvc.summary">负责TVCBOOK平台及相关SaaS产品的规划与设计，推动产品从0到1的建设与迭代。</p>
 
                             <div class="timeline-achievements">
                                 <div class="achievement">
                                     <div class="achievement-icon">🚀</div>
                                     <div class="achievement-content">
-                                        <h4>优视云集 SaaS 平台</h4>
-                                        <p>主导 SaaS 平台改版，提升用户留存率 40%</p>
+                                        <h4 data-i18n="exp.tvc.ach1.title">优视云集 SaaS 平台</h4>
+                                        <p data-i18n="exp.tvc.ach1.desc">主导 SaaS 平台改版，提升用户留存率 40%</p>
                                     </div>
                                 </div>
                                 <div class="achievement">
                                     <div class="achievement-icon">📱</div>
                                     <div class="achievement-content">
-                                        <h4>易推 APP</h4>
-                                        <p>从0到1孵化短视频营销工具，累计用户突破 10万+</p>
+                                        <h4 data-i18n="exp.tvc.ach2.title">易推 APP</h4>
+                                        <p data-i18n="exp.tvc.ach2.desc">从0到1孵化短视频营销工具，累计用户突破 10万+</p>
                                     </div>
                                 </div>
                                 <div class="achievement">
                                     <div class="achievement-icon">💰</div>
                                     <div class="achievement-content">
-                                        <h4>商业化体系搭建</h4>
-                                        <p>设计会员与增值服务体系，首年营收超 200万</p>
+                                        <h4 data-i18n="exp.tvc.ach3.title">商业化体系搭建</h4>
+                                        <p data-i18n="exp.tvc.ach3.desc">设计会员与增值服务体系，首年营收超 200万</p>
                                     </div>
                                 </div>
                                 <div class="achievement">
                                     <div class="achievement-icon">📜</div>
                                     <div class="achievement-content">
-                                        <h4>高新技术企业认证</h4>
-                                        <p>主导申请15项软件著作权，获得政府补贴80万元</p>
+                                        <h4 data-i18n="exp.tvc.ach4.title">高新技术企业认证</h4>
+                                        <p data-i18n="exp.tvc.ach4.desc">主导申请15项软件著作权，获得政府补贴80万元</p>
                                     </div>
                                 </div>
                                 <div class="achievement">
                                     <div class="achievement-icon">🏆</div>
                                     <div class="achievement-content">
-                                        <h4>"金狮奖"线上报奖系统</h4>
-                                        <p>实现大型活动全流程线上化（上传、编辑、报名、付款、评奖）</p>
+                                        <h4 data-i18n="exp.tvc.ach5.title">"金狮奖"线上报奖系统</h4>
+                                        <p data-i18n="exp.tvc.ach5.desc">实现大型活动全流程线上化（上传、编辑、报名、付款、评奖）</p>
                                     </div>
                                 </div>
                             </div>
@@ -313,8 +306,8 @@
                             <!-- 产品展示视频 -->
                             <div class="product-showcase">
                                 <div class="showcase-header">
-                                    <h4 class="showcase-title">产品展示</h4>
-                                    <span class="video-creator">视频剪辑 by 严黎明</span>
+                                    <h4 class="showcase-title" data-i18n="exp.showcase">产品展示</h4>
+                                    <span class="video-creator" data-i18n="exp.videoCredit">视频剪辑 by 严黎明</span>
                                 </div>
                                 <div class="video-grid">
                                     <div class="video-card"
@@ -324,8 +317,8 @@
                                             <div class="play-button">▶</div>
                                         </div>
                                         <div class="video-info">
-                                            <span class="video-name">优视云集 - 产品演示</span>
-                                            <span class="video-tag">SaaS平台</span>
+                                            <span class="video-name" data-i18n="exp.tvc.video1.name">优视云集 - 产品演示</span>
+                                            <span class="video-tag" data-i18n="exp.tvc.video1.tag">SaaS平台</span>
                                         </div>
                                     </div>
                                     <div class="video-card"
@@ -335,8 +328,8 @@
                                             <div class="play-button">▶</div>
                                         </div>
                                         <div class="video-info">
-                                            <span class="video-name">易推 - APP演示</span>
-                                            <span class="video-tag">移动端产品</span>
+                                            <span class="video-name" data-i18n="exp.tvc.video2.name">易推 - APP演示</span>
+                                            <span class="video-tag" data-i18n="exp.tvc.video2.tag">移动端产品</span>
                                         </div>
                                     </div>
                                 </div>
@@ -355,29 +348,29 @@
                             <div class="timeline-company">
                                 <img src="other/image/logo/uber.png" alt="Uber" class="company-logo">
                                 <div class="company-info">
-                                    <h3>UBER 优步</h3>
-                                    <span class="timeline-role">市场营销专员</span>
+                                    <h3 data-i18n="exp.uber.name">UBER 优步</h3>
+                                    <span class="timeline-role" data-i18n="exp.uber.role">市场营销专员</span>
                                 </div>
                             </div>
                             <div class="timeline-meta">
                                 <span class="timeline-date">2015.04 - 2016.08</span>
-                                <span class="timeline-location">广州</span>
+                                <span class="timeline-location" data-i18n="exp.uber.location">广州</span>
                             </div>
                         </div>
                         <div class="timeline-body">
-                            <p class="timeline-summary">策划并落地10+创新营销活动，累计拉新用户超10万+</p>
+                            <p class="timeline-summary" data-i18n="exp.uber.summary">策划并落地10+创新营销活动，累计拉新用户超10万+</p>
                             <div class="timeline-tags">
-                                <span class="tag">一键呼叫复仇者联盟</span>
-                                <span class="tag">UBER PUPPIES萌宠专车</span>
-                                <span class="tag">UBER OFFER面试车</span>
-                                <span class="tag">万达5折狂欢</span>
+                                <span class="tag" data-i18n="exp.uber.tag1">一键呼叫复仇者联盟</span>
+                                <span class="tag" data-i18n="exp.uber.tag2">UBER PUPPIES萌宠专车</span>
+                                <span class="tag" data-i18n="exp.uber.tag3">UBER OFFER面试车</span>
+                                <span class="tag" data-i18n="exp.uber.tag4">万达5折狂欢</span>
                             </div>
 
                             <!-- UBER 视频展示 -->
                             <div class="product-showcase">
                                 <div class="showcase-header">
-                                    <h4 class="showcase-title">活动视频</h4>
-                                    <span class="video-creator">视频剪辑 by 严黎明</span>
+                                    <h4 class="showcase-title" data-i18n="exp.uber.videoTitle">活动视频</h4>
+                                    <span class="video-creator" data-i18n="exp.videoCredit">视频剪辑 by 严黎明</span>
                                 </div>
                                 <div class="video-grid">
                                     <div class="video-card" onclick="openVideoModal('other/project/UBER/UBER周年庆.mp4')">
@@ -386,8 +379,9 @@
                                             <div class="play-button">▶</div>
                                         </div>
                                         <div class="video-info">
-                                            <span class="video-name">UBER周年庆 - 活动回顾</span>
-                                            <span class="video-tag">营销活动</span>
+                                            <span class="video-name" data-i18n="exp.uber.video.name">UBER周年庆 -
+                                                活动回顾</span>
+                                            <span class="video-tag" data-i18n="exp.uber.video.tag">营销活动</span>
                                         </div>
                                     </div>
                                 </div>
@@ -404,70 +398,70 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-number">03</span>
-                <h2 class="section-title">专业技能</h2>
+                <h2 class="section-title" data-i18n="skills.title">专业技能</h2>
             </div>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3 class="skill-category-title">
                         <span class="skill-icon">💡</span>
-                        产品技能
+                        <span data-i18n="skills.product">产品技能</span>
                     </h3>
                     <div class="skill-items">
                         <div class="skill-item">
                             <span class="skill-name">Sketch & Figma</span>
-                            <span class="skill-desc">UI规范设计</span>
+                            <span class="skill-desc" data-i18n="skills.product.s1">UI规范设计</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">产品RPD</span>
-                            <span class="skill-desc">需求文档撰写</span>
+                            <span class="skill-name" data-i18n="skills.product.s2.name">产品RPD</span>
+                            <span class="skill-desc" data-i18n="skills.product.s2.desc">需求文档撰写</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">跨部门协作</span>
-                            <span class="skill-desc">资源整合推动</span>
+                            <span class="skill-name" data-i18n="skills.product.s3.name">跨部门协作</span>
+                            <span class="skill-desc" data-i18n="skills.product.s3.desc">资源整合推动</span>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">AI Agent搭建</span>
-                            <span class="skill-desc">智能化工具</span>
+                            <span class="skill-name" data-i18n="skills.product.s4.name">AI Agent搭建</span>
+                            <span class="skill-desc" data-i18n="skills.product.s4.desc">智能化工具</span>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">Vibe Coding</span>
-                            <span class="skill-desc">AI辅助编程</span>
+                            <span class="skill-desc" data-i18n="skills.product.s5">AI辅助编程</span>
                         </div>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3 class="skill-category-title">
                         <span class="skill-icon">🛠️</span>
-                        工具技能
+                        <span data-i18n="skills.tools">工具技能</span>
                     </h3>
                     <div class="skill-items">
                         <div class="skill-item">
-                            <span class="skill-name">Office全系列</span>
-                            <span class="skill-desc">文档处理</span>
+                            <span class="skill-name" data-i18n="skills.tools.s1.name">Office全系列</span>
+                            <span class="skill-desc" data-i18n="skills.tools.s1.desc">文档处理</span>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">AE & PR</span>
-                            <span class="skill-desc">视频制作</span>
+                            <span class="skill-desc" data-i18n="skills.tools.s2">视频制作</span>
                         </div>
                         <div class="skill-item">
                             <span class="skill-name">AI & PS</span>
-                            <span class="skill-desc">平面设计</span>
+                            <span class="skill-desc" data-i18n="skills.tools.s3">平面设计</span>
                         </div>
                     </div>
                 </div>
                 <div class="skill-category">
                     <h3 class="skill-category-title">
                         <span class="skill-icon">🏅</span>
-                        专业证书
+                        <span data-i18n="skills.certs">专业证书</span>
                     </h3>
                     <div class="skill-items">
                         <div class="skill-item certificate">
-                            <span class="skill-name">PMP项目管理认证</span>
+                            <span class="skill-name" data-i18n="skills.certs.pmp">PMP项目管理认证</span>
                             <span class="skill-badge">5A</span>
                         </div>
                         <div class="skill-item certificate">
-                            <span class="skill-name">CPR+AED培训证书</span>
-                            <span class="skill-badge">急救</span>
+                            <span class="skill-name" data-i18n="skills.certs.cpr">CPR+AED培训证书</span>
+                            <span class="skill-badge" data-i18n="skills.certs.cpr.badge">急救</span>
                         </div>
                     </div>
                 </div>
@@ -480,7 +474,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-number">04</span>
-                <h2 class="section-title">教育背景</h2>
+                <h2 class="section-title" data-i18n="edu.title">教育背景</h2>
             </div>
             <div class="education-grid">
                 <div class="education-card">
@@ -488,9 +482,9 @@
                         <img src="other/image/logo/哈尔滨工业大学.png" alt="哈尔滨工业大学">
                     </div>
                     <div class="education-content">
-                        <h3>哈尔滨工业大学</h3>
-                        <p class="education-degree">MBA - 硕士</p>
-                        <p class="education-meta">2025.09 - 2028.02 · 深圳</p>
+                        <h3 data-i18n="edu.hit.name">哈尔滨工业大学</h3>
+                        <p class="education-degree" data-i18n="edu.hit.degree">MBA - 硕士</p>
+                        <p class="education-meta" data-i18n="edu.hit.meta">2025.09 - 2028.02 · 深圳</p>
                     </div>
                 </div>
                 <div class="education-card">
@@ -498,10 +492,10 @@
                         <img src="other/image/logo/华南师范大学.png" alt="华南师范大学">
                     </div>
                     <div class="education-content">
-                        <h3>华南师范大学</h3>
-                        <p class="education-degree">动漫设计与制作</p>
-                        <p class="education-meta">2012.09 - 2015.05 · 广州</p>
-                        <p class="education-extra">Enactus创行 - 品牌宣传技术经理</p>
+                        <h3 data-i18n="edu.scnu.name">华南师范大学</h3>
+                        <p class="education-degree" data-i18n="edu.scnu.degree">动漫设计与制作</p>
+                        <p class="education-meta" data-i18n="edu.scnu.meta">2012.09 - 2015.05 · 广州</p>
+                        <p class="education-extra" data-i18n="edu.scnu.extra">Enactus创行 - 品牌宣传技术经理</p>
                     </div>
                 </div>
             </div>
@@ -513,22 +507,22 @@
         <div class="container">
             <div class="contact-wrapper">
                 <div class="contact-content">
-                    <h2 class="contact-title">让我们一起创造价值</h2>
-                    <p class="contact-desc">期待与您的交流与合作</p>
+                    <h2 class="contact-title" data-i18n="contact.title">让我们一起创造价值</h2>
+                    <p class="contact-desc" data-i18n="contact.desc">期待与您的交流与合作</p>
                 </div>
                 <div class="contact-info">
                     <a href="#" class="contact-item" id="contact-email">
                         <div class="contact-icon">✉️</div>
                         <div class="contact-detail">
-                            <span class="contact-label">邮箱</span>
-                            <span class="contact-value" id="email-display">点击显示</span>
+                            <span class="contact-label" data-i18n="contact.email">邮箱</span>
+                            <span class="contact-value" id="email-display" data-i18n="contact.clickShow">点击显示</span>
                         </div>
                     </a>
                     <a href="#" class="contact-item" id="contact-phone">
                         <div class="contact-icon">📱</div>
                         <div class="contact-detail">
-                            <span class="contact-label">电话</span>
-                            <span class="contact-value" id="phone-display">点击显示</span>
+                            <span class="contact-label" data-i18n="contact.phone">电话</span>
+                            <span class="contact-value" id="phone-display" data-i18n="contact.clickShow">点击显示</span>
                         </div>
                     </a>
                 </div>
@@ -550,12 +544,13 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>© 2025 严黎明 (LeonYim). All rights reserved.</p>
-                <p class="footer-note">Built with ❤️</p>
+                <p data-i18n="footer.copyright">© 2025 严黎明 (LeonYim). All rights reserved.</p>
+                <p class="footer-note" data-i18n="footer.note">Built with ❤️</p>
             </div>
         </div>
     </footer>
 
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
 </body>
 

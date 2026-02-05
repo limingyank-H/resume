@@ -10,12 +10,20 @@ document.addEventListener('DOMContentLoaded', function () {
     initSmoothScroll();
     initCounterAnimation();
     initContactProtection(); // 联系方式保护
+
+    // 初始化多语言功能（需要在其他模块之后）
+    if (typeof initI18n === 'function') {
+        initI18n();
+    }
 });
 
 /**
  * 联系方式保护 - 动态拼接敏感信息防止爬虫抓取
  * NOTE: 信息被拆分存储，在用户交互后才组装显示
  */
+// 存储联系方式数据供多语言模块访问
+let contactData = null;
+
 function initContactProtection() {
     // 拆分存储 - 爬虫无法直接识别
     const e = ['liming', '.', 'yank'];
@@ -25,6 +33,9 @@ function initContactProtection() {
     const email = e.join('') + '@' + d;
     const phone = p.join(' ');
     const phoneRaw = p.join('').replace('+86', '+86');
+
+    // 保存联系方式数据
+    contactData = { email, phone, phoneRaw };
 
     // Hero 区域的社交链接
     const socialEmail = document.getElementById('social-email');
@@ -38,6 +49,16 @@ function initContactProtection() {
     }
 
     // 联系方式区域
+    setupContactDisplay();
+}
+
+/**
+ * 设置联系方式显示（支持多语言切换时重新调用）
+ */
+function setupContactDisplay() {
+    if (!contactData) return;
+
+    const { email, phone, phoneRaw } = contactData;
     const contactEmail = document.getElementById('contact-email');
     const contactPhone = document.getElementById('contact-phone');
     const emailDisplay = document.getElementById('email-display');
@@ -47,17 +68,31 @@ function initContactProtection() {
         contactEmail.href = 'javascript:void(0)'; // 防止页面跳转
         emailDisplay.textContent = email;
 
+        // 移除之前的事件监听器（防止重复绑定）
+        const newContactEmail = contactEmail.cloneNode(true);
+        contactEmail.parentNode.replaceChild(newContactEmail, contactEmail);
+
+        const newEmailDisplay = newContactEmail.querySelector('#email-display') || document.getElementById('email-display');
+        if (newEmailDisplay) {
+            newEmailDisplay.textContent = email;
+        }
+
         // 点击复制功能
-        contactEmail.addEventListener('click', function (e) {
+        newContactEmail.addEventListener('click', function (e) {
             e.preventDefault();
+            const displayEl = this.querySelector('.contact-value');
+            if (!displayEl) return;
+
             navigator.clipboard.writeText(email).then(() => {
-                const originalText = emailDisplay.textContent;
-                emailDisplay.textContent = '已复制到剪贴板！';
-                emailDisplay.style.color = 'var(--primary)';
+                const originalText = displayEl.textContent;
+                // 使用多语言翻译（如果可用）
+                const copiedText = typeof t === 'function' ? t('contact.copied') : '已复制到剪贴板！';
+                displayEl.textContent = copiedText;
+                displayEl.style.color = 'var(--primary)';
 
                 setTimeout(() => {
-                    emailDisplay.textContent = originalText;
-                    emailDisplay.style.color = '';
+                    displayEl.textContent = originalText;
+                    displayEl.style.color = '';
                 }, 2000);
             });
         });
@@ -67,6 +102,16 @@ function initContactProtection() {
         phoneDisplay.textContent = phone;
     }
 }
+
+/**
+ * 供多语言模块调用的联系方式重新初始化函数
+ */
+function reinitContactInfo() {
+    setupContactDisplay();
+}
+
+// 暴露给全局
+window.reinitContactInfo = reinitContactInfo;
 
 /**
  * 滚动动画 - 元素进入视口时触发动画

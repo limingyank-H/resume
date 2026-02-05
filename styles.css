@@ -108,6 +108,52 @@ img {
     gap: 8px;
 }
 
+/* 导航栏右侧操作区域 */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* 语言切换按钮 */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+}
+
+.lang-switch:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+.lang-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.45);
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.lang-label.active {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(29, 233, 182, 0.5);
+}
+
+.lang-divider {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.3);
+    user-select: none;
+}
+
 .logo-text {
     font-size: 1.5rem;
     font-weight: 700;
