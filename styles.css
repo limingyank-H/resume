@@ -1711,6 +1711,25 @@ img {
     border-radius: 4px;
 }
 
+/* 展示区域头部 - 标题和创作者标签 */
+.showcase-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.showcase-header .showcase-title {
+    margin-bottom: 0;
+}
+
+/* 视频创作者标签 - 放在标题右侧 */
+.video-creator {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
 @media (max-width: 768px) {
     .video-grid {
         grid-template-columns: 1fr;
