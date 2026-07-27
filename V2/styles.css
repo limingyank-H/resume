@@ -745,7 +745,7 @@ img {
     transform: translateX(-50%) translateY(0);
 }
 
-@media (max-width: 0px) {
+@media (max-width: 768px) {
     .logo-wall {
         gap: 16px;
         flex-wrap: wrap;
@@ -1339,13 +1339,13 @@ img {
 /* ========================================
    响应式设计
    ======================================== */
-@media (max-width: 0px) {
+@media (max-width: 1200px) {
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 0px) {
+@media (max-width: 992px) {
     :root {
         --section-padding: 80px;
     }
@@ -1369,7 +1369,7 @@ img {
     }
 }
 
-@media (max-width: 0px) {
+@media (max-width: 768px) {
     .navbar {
         padding: 16px 20px;
     }
@@ -1473,7 +1473,7 @@ img {
     }
 }
 
-@media (max-width: 0px) {
+@media (max-width: 480px) {
     .hero-buttons {
         flex-direction: column;
     }
@@ -1677,7 +1677,7 @@ img {
     font-style: italic;
 }
 
-@media (max-width: 0px) {
+@media (max-width: 768px) {
     .video-grid {
         grid-template-columns: 1fr;
     }
