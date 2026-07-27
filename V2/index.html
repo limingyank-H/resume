@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh-CN" id="html-root">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#e8cab2">
+    <title data-i18n="page.title">严黎明 | 产品经理</title>
+    <meta name="description" data-i18n-attr="content" data-i18n="page.description"
+        content="严黎明（LeonYim）- 11年互联网产品与项目管理经验，深耕 ToB SaaS，专注 AI 产品设计与落地">
+    <meta name="author" content="严黎明 LeonYim">
+    <meta name="keywords" content="严黎明,LeonYim,产品经理,ToB SaaS,AIGC,AI 内容生成,智能素材管理,SCRM,产品规划">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.leonyim.me/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../other/image/portrait-beige.png">
+    <link rel="apple-touch-icon" href="../other/image/portrait-beige.png">
+
+    <!-- Open Graph (Facebook / 微信 / 通用) -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="严黎明 | 产品经理 (LeonYim)">
+    <meta property="og:description" content="11年互联网产品与项目管理经验 · 深耕 ToB SaaS · 专注 AI 产品设计与落地">
+    <meta property="og:url" content="https://www.leonyim.me/">
+    <meta property="og:image" content="https://www.leonyim.me/other/image/portrait-beige.png">
+    <meta property="og:image:alt" content="严黎明 LeonYim 个人头像">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="profile:first_name" content="黎明">
+    <meta property="profile:last_name" content="严">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Leon Yim | Product Manager">
+    <meta name="twitter:description" content="11 years of product experience · ToB SaaS expert · Focused on AI product design & delivery">
+    <meta name="twitter:image" content="https://www.leonyim.me/other/image/portrait-beige.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 埋点 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-48KJ0V7ZVY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-48KJ0V7ZVY');
+    </script>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span class="logo-text">Leon</span>
+            <span class="logo-dot"></span>
+        </div>
+
+        <div class="nav-actions">
+            <!-- 语言切换按钮 -->
+            <button class="lang-switch" id="langSwitch" title="Switch Language">
+                <span class="lang-label" data-lang="zh">中</span>
+                <span class="lang-divider">/</span>
+                <span class="lang-label active" data-lang="en">EN</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 - 融合布局设计 -->
+    <section class="hero" id="hero">
+        <!-- 人物背景层 - 贯穿整个Hero -->
+        <div class="hero-portrait-layer">
+            <img src="../other/image/portrait-beige.png" alt="严黎明" class="hero-portrait-bg">
+        </div>
+
+        <!-- 内容层 - 覆盖在人物上 -->
+        <div class="hero-content-layer">
+            <!-- 左侧主要内容 -->
+            <div class="hero-main">
+                <p class="hero-greeting animate-fade-in" data-i18n="hero.greeting">你好，我是</p>
+                <h1 class="hero-name animate-fade-in-delay">
+                    <span class="name-highlight" data-i18n="hero.name">严黎明</span>
+                    <span class="name-en">LeonYim</span>
+                </h1>
+                <h2 class="hero-title animate-fade-in-delay-2" data-i18n="hero.title">产品经理</h2>
+                <p class="hero-desc animate-fade-in-delay-3" data-i18n="hero.desc"></p>
+                <div class="hero-buttons animate-fade-in-delay-3">
+                    <a href="#contact" class="btn btn-primary">
+                        <span data-i18n="hero.contact">联系我</span>
+                        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="../other/resume/最新版本/严黎明-产品经理-简历_new.pdf" class="btn btn-secondary" download id="downloadBtn">
+                        <span data-i18n="hero.download">下载简历</span>
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 右侧专业信息 - 艺术化文字排版 -->
+            <div class="hero-aside">
+
+                <div class="stat-card animate-fade-in-right">
+                    <span class="stat-label" data-i18n="aside.label">专注领域</span>
+                    <h3 class="stat-title">
+                        <span class="title-line" data-i18n="aside.line1">扎根互联网行业</span>
+                        <span class="title-line" data-i18n="aside.line2">专注 <em>ToB SaaS</em></span>
+                        <span class="title-line" data-i18n="aside.line3">产品设计与运营</span>
+                    </h3>
+                    <p class="stat-desc" data-i18n="aside.desc"></p>
+                    <a href="../other/resume/最新版本/严黎明-产品经理-简历_new.pdf" class="stat-link" download id="downloadLink">
+                        <span data-i18n="hero.download">下载简历</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部元素 -->
+        <div class="hero-scroll-hint">
+            <span data-i18n="hero.scroll">向下滚动</span>
+            <div class="scroll-line"></div>
+        </div>
+        <!-- 社交链接 -->
+        <div class="social-links">
+            <a href="#" class="social-link" title="Email" id="social-email">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+            </a>
+            <a href="#" class="social-link" title="Phone" id="social-phone">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title" data-i18n="about.title">关于我</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro" data-i18n="about.intro"></p>
+                    <p class="about-detail" data-i18n="about.detail"></p>
+                    <!-- Logo 墙 -->
+                    <div class="logo-wall">
+                        <div class="logo-item" data-name="零一智合">
+                            <img src="../other/image/logo/创量广告.png" alt="零一智合">
+                        </div>
+                        <div class="logo-item" data-name="UBER 优步">
+                            <img src="../other/image/logo/uber.png" alt="UBER">
+                        </div>
+                        <div class="logo-item" data-name="TVCBOOK 优视云集">
+                            <img src="../other/image/logo/TVCBOOK.png" alt="TVCBOOK">
+                        </div>
+                        <div class="logo-item" data-name="阿里巴巴·灵犀互娱">
+                            <img src="../other/image/logo/灵犀互娱.png" alt="灵犀互娱">
+                        </div>
+                        <div class="logo-item" data-name="哈尔滨工业大学">
+                            <img src="../other/image/logo/哈尔滨工业大学.png" alt="哈尔滨工业大学">
+                        </div>
+                        <div class="logo-item" data-name="华南师范大学">
+                            <img src="../other/image/logo/华南师范大学.png" alt="华南师范大学">
+                        </div>
+                        <div class="logo-item" data-name="Enactus 创行">
+                            <img src="../other/image/logo/enactus.png" alt="Enactus">
+                        </div>
+                        <div class="logo-item" data-name="金狮奖">
+                            <img src="../other/image/logo/金狮奖.png" alt="金狮奖">
+                        </div>
+                    </div>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <div class="highlight-number">11+</div>
+                        <div class="highlight-label" data-i18n="about.stat1">年产品经验</div>
+                        <div class="highlight-source" data-i18n="about.stat1.src">2015 至今</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-number">15</div>
+                        <div class="highlight-label" data-i18n="about.stat2">项软件著作权</div>
+                        <div class="highlight-source" data-i18n="about.stat2.src">@TVCBOOK</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-number">90%</div>
+                        <div class="highlight-label" data-i18n="about.stat3">业务线上化</div>
+                        <div class="highlight-source" data-i18n="about.stat3.src">@阿里·灵犀</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-number">PMF</div>
+                        <div class="highlight-label" data-i18n="about.stat4">种子用户建联</div>
+                        <div class="highlight-source" data-i18n="about.stat4.src">@魔剪</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作经历 -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title" data-i18n="exp.title">工作经历</h2>
+            </div>
+            <div class="timeline">
+                <!-- 深圳市零一智合科技（单一雇主：二创 + 智能创意素材库） -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-company">
+                                <img src="../other/image/logo/创量广告.png" alt="零一智合" class="company-logo">
+                                <div class="company-info">
+                                    <h3 data-i18n="exp.lyzh.name">深圳市零一智合科技</h3>
+                                    <span class="timeline-role" data-i18n="exp.lyzh.role">产品经理 (To B) · 魔剪-电商模块负责人</span>
+                                </div>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="timeline-date" data-i18n="exp.lyzh.date">2026.02 - 至今</span>
+                                <span class="timeline-location" data-i18n="exp.lyzh.location">深圳</span>
+                            </div>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="timeline-summary" data-i18n="exp.lyzh.summary">负责魔剪电商产品线功能规划与迭代，帮助电商客户提升内容生产效率与投放效果；此前主导创量·创意云素材库平台，聚焦 AIGC 内容生产与智能素材管理赛道。</p>
+                            <div class="timeline-achievements">
+                                <div class="achievement">
+                                    <div class="achievement-icon" aria-hidden="true">
+                                        <!-- trending-up -->
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>
+                                    </div>
+                                    <div class="achievement-content">
+                                        <h4 data-i18n="exp.lyzh.ach1.title">二创：从上线到跑通 PMF</h4>
+                                        <p data-i18n="exp.lyzh.ach1.desc">独立负责产品线的需求洞察 → PRD → 上线 → 客户验证闭环。产品上线 1 月内 AI 系统累计生产数万条成片，建联服务省广、优矩互动、蓝标等种子客户，跑通首个付费级客户。</p>
+                                    </div>
+                                </div>
+                                <div class="achievement">
+                                    <div class="achievement-icon" aria-hidden="true">
+                                        <!-- layers -->
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>
+                                    </div>
+                                    <div class="achievement-content">
+                                        <h4 data-i18n="exp.lyzh.ach2.title">抽象三条能力线</h4>
+                                        <p data-i18n="exp.lyzh.ach2.desc">将碎片需求收敛为「精剪 / 包装对抗（对抗平台判重）/ 混剪」三条产品能力线，累计上线 10+ 功能，构建可复用的产品框架而非零散功能堆叠。</p>
+                                    </div>
+                                </div>
+                                <div class="achievement">
+                                    <div class="achievement-icon" aria-hidden="true">
+                                        <!-- copy -->
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                                    </div>
+                                    <div class="achievement-content">
+                                        <h4 data-i18n="exp.lyzh.ach3.title">「1 生 3」策略裂变</h4>
+                                        <p data-i18n="exp.lyzh.ach3.desc">通过 Prompt 工程让 1 条原片自动裂变 3 条不同策略成片，把产出从「无法使用」推进到单一企业日产百条，直接解决客户堆量刚需。</p>
+                                    </div>
+                                </div>
+                                <div class="achievement">
+                                    <div class="achievement-icon" aria-hidden="true">
+                                        <!-- Lumen: multimodal (多模态) -->
+                                        <svg viewBox="0 0 33.8 33.8" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.9" y="0.9" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="2.9" y="3.9" width="10" height="2" fill="currentColor" fill-opacity="0.5"/><rect x="2.9" y="7.9" width="7" height="2" fill="currentColor" fill-opacity="0.4"/><circle cx="25.9" cy="7.9" r="7" stroke="currentColor" stroke-width="1.8"/><circle cx="25.4" cy="5.4" r="2.5" fill="currentColor" fill-opacity="0.8"/><circle cx="7.9" cy="25.9" r="7" stroke="currentColor" stroke-width="1.8"/><rect x="2.9" y="21.9" width="4" height="2" fill="currentColor" fill-opacity="0.8"/><rect x="18.9" y="18.9" width="14" height="14" rx="2" fill="currentColor"/><circle cx="16.9" cy="16.9" r="2" fill="currentColor"/></svg>
+                                    </div>
+                                    <div class="achievement-content">
+                                        <h4 data-i18n="exp.lyzh.ach4.title">创量 · 创意云素材库（前期）</h4>
+                                        <p data-i18n="exp.lyzh.ach4.desc">对接 Seedance 2.0、Kling 3.0 等主流模型，打通爆款采集、AI 智能检索、拉片解析到一键复刻的全链路，让爆款生产从「靠灵感」变成「靠系统」。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 阿里巴巴 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-company">
+                                <img src="../other/image/logo/灵犀互娱.png" alt="灵犀互娱" class="company-logo">
+                                <div class="company-info">
+                                    <h3 data-i18n="exp.ali.name">阿里巴巴·灵犀互娱</h3>
+                                    <span class="timeline-role" data-i18n="exp.ali.role">产品经理 (To B)</span>
+                                </div>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="timeline-date" data-i18n="exp.ali.date">2022.02 - 2024.12</span>
+                                <span class="timeline-location" data-i18n="exp.ali.location">广州</span>
+                            </div>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="timeline-summary" data-i18n="exp.ali.summary">围绕VIP用户全生命周期，打造线上VIP用户运营系统</p>
+                            <div class="timeline-achievements">
+                                <div class="achievement">
+                                    <div class="achievement-icon" aria-hidden="true">
+                                        <!-- rocket -->
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                                    </div>
+                                    <div class="achievement-content">
+                                        <h4 data-i18n="exp.ali.ach1.title">VIP运营平台从0到1</h4>
+                                        <p data-i18n="exp.ali.ach1.desc">主导 ToB SaaS SCRM
+                                            系统规划与落地，实现核心业务流程线上化，策略优化周期从双周缩短至3天</p>
+                                    </div>
+                                </div>
+                                <div class="achievement">
+                                    <div class="achievement-icon" aria-hidden="true">
+                                        <!-- trending-up -->
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>
+                                    </div>
+                                    <div class="achievement-content">
+                                        <h4 data-i18n="exp.ali.ach2.title">服务效率与ROI显著提升</h4>
+                                        <p data-i18n="exp.ali.ach2.desc">用户维系ROI提升28%，消息处理ROI提升47%，5分钟回复率从85%提升至92%</p>
+                                    </div>
+                                </div>
+                                <div class="achievement">
+                                    <div class="achievement-icon" aria-hidden="true">
+                                        <!-- Lumen: agent (AI智能体) -->
+                                        <svg viewBox="0 0 25.8 26.9" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="12.9" cy="15" rx="12" ry="11" stroke="currentColor" stroke-width="1.8"/><circle cx="9.4" cy="13.5" r="3.5" fill="currentColor"/><circle cx="18.4" cy="13.5" r="3.5" fill="currentColor"/><circle cx="9.4" cy="13.5" r="1.5" fill="#0b0b0e"/><circle cx="18.4" cy="13.5" r="1.5" fill="#0b0b0e"/><rect x="6.9" y="18" width="12" height="2" rx="1" fill="currentColor" fill-opacity="0.4"/><rect x="11.9" width="2" height="5" fill="currentColor" fill-opacity="0.7"/><circle cx="12.9" cy="4" r="3" fill="currentColor"/></svg>
+                                    </div>
+                                    <div class="achievement-content">
+                                        <h4 data-i18n="exp.ali.ach3.title">AI智能外呼系统</h4>
+                                        <p data-i18n="exp.ali.ach3.desc">触达能力提升百倍，成本降至0.23元/次(降幅98%)，周年庆触达460万用户</p>
+                                    </div>
+                                </div>
+                                <div class="achievement">
+                                    <div class="achievement-icon" aria-hidden="true">
+                                        <!-- network -->
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/><path d="M12 8v4M5 16v-2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v2"/></svg>
+                                    </div>
+                                    <div class="achievement-content">
+                                        <h4 data-i18n="exp.ali.ach4.title">私域建联规模化</h4>
+                                        <p data-i18n="exp.ali.ach4.desc">建联用户量38万(增长196%)，服务成本降至0.19元/月(降幅89%)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TVCBOOK -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-company">
+                                <img src="../other/image/logo/TVCBOOK.png" alt="TVCBOOK" class="company-logo">
+                                <div class="company-info">
+                                    <h3 data-i18n="exp.tvc.name">TVCBOOK (优视云集)</h3>
+                                    <span class="timeline-role" data-i18n="exp.tvc.role">产品经理 (ToB & ToC)</span>
+                                </div>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="timeline-date" data-i18n="exp.tvc.date">2016.08 - 2022.02</span>
+                                <span class="timeline-location" data-i18n="exp.tvc.location">广州</span>
+                            </div>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="timeline-summary" data-i18n="exp.tvc.summary">负责TVCBOOK平台及相关SaaS产品的规划与设计，推动产品从0到1的建设与迭代。</p>
+
+                            <div class="timeline-achievements">
+                                <div class="achievement">
+                                    <div class="achievement-icon" aria-hidden="true">
+                                        <!-- layout-grid -->
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                                    </div>
+                                    <div class="achievement-content">
+                                        <h4 data-i18n="exp.tvc.ach1.title">优视云集 SaaS 平台</h4>
+                                        <p data-i18n="exp.tvc.ach1.desc">主导 SaaS 平台改版，提升用户留存率 40%</p>
+                                    </div>
+                                </div>
+                                <div class="achievement">
+                                    <div class="achievement-icon" aria-hidden="true">
+                                        <!-- smartphone -->
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                                    </div>
+                                    <div class="achievement-content">
+                                        <h4 data-i18n="exp.tvc.ach2.title">易推 APP</h4>
+                                        <p data-i18n="exp.tvc.ach2.desc">从0到1孵化短视频营销工具，累计用户突破 10万+</p>
+                                    </div>
+                                </div>
+                                <div class="achievement">
+                                    <div class="achievement-icon" aria-hidden="true">
+                                        <!-- gem -->
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>
+                                    </div>
+                                    <div class="achievement-content">
+                                        <h4 data-i18n="exp.tvc.ach3.title">商业化体系搭建</h4>
+                                        <p data-i18n="exp.tvc.ach3.desc">设计会员与增值服务体系，首年营收超 200万</p>
+                                    </div>
+                                </div>
+                                <div class="achievement">
+                                    <div class="achievement-icon" aria-hidden="true">
+                                        <!-- badge-check -->
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+                                    </div>
+                                    <div class="achievement-content">
+                                        <h4 data-i18n="exp.tvc.ach4.title">高新技术企业认证</h4>
+                                        <p data-i18n="exp.tvc.ach4.desc">主导申请15项软件著作权，获得政府补贴80万元</p>
+                                    </div>
+                                </div>
+                                <div class="achievement">
+                                    <div class="achievement-icon" aria-hidden="true">
+                                        <!-- trophy -->
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0z"/></svg>
+                                    </div>
+                                    <div class="achievement-content">
+                                        <h4 data-i18n="exp.tvc.ach5.title">"金狮奖"线上报奖系统</h4>
+                                        <p data-i18n="exp.tvc.ach5.desc">实现大型活动全流程线上化（上传、编辑、报名、付款、评奖）</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 产品展示视频 -->
+                            <div class="product-showcase">
+                                <div class="showcase-header">
+                                    <h4 class="showcase-title" data-i18n="exp.showcase">产品展示</h4>
+                                    <span class="video-creator" data-i18n="exp.videoCredit">视频剪辑 by 严黎明</span>
+                                </div>
+                                <div class="video-grid">
+                                    <div class="video-card" role="button" tabindex="0"
+                                        onclick="openVideoModal('../other/project/tvcbook/video/优视云集-V6-Leon.mp4')"
+                                        onkeydown="handleVideoCardKey(event, '../other/project/tvcbook/video/优视云集-V6-Leon.mp4')">
+                                        <div class="video-thumbnail">
+                                            <img src="../other/project/tvcbook/video/tb-bg.png" alt="优视云集">
+                                            <div class="play-button">▶</div>
+                                        </div>
+                                        <div class="video-info">
+                                            <span class="video-name" data-i18n="exp.tvc.video1.name">优视云集 - 产品演示</span>
+                                            <span class="video-tag" data-i18n="exp.tvc.video1.tag">SaaS平台</span>
+                                        </div>
+                                    </div>
+                                    <div class="video-card" role="button" tabindex="0"
+                                        onclick="openVideoModal('../other/project/tvcbook/video/易推-V09.mp4')"
+                                        onkeydown="handleVideoCardKey(event, '../other/project/tvcbook/video/易推-V09.mp4')">
+                                        <div class="video-thumbnail">
+                                            <img src="../other/project/tvcbook/video/yt-bg.png" alt="易推">
+                                            <div class="play-button">▶</div>
+                                        </div>
+                                        <div class="video-info">
+                                            <span class="video-name" data-i18n="exp.tvc.video2.name">易推 - APP演示</span>
+                                            <span class="video-tag" data-i18n="exp.tvc.video2.tag">移动端产品</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UBER -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-company">
+                                <img src="../other/image/logo/uber.png" alt="Uber" class="company-logo">
+                                <div class="company-info">
+                                    <h3 data-i18n="exp.uber.name">UBER 优步</h3>
+                                    <span class="timeline-role" data-i18n="exp.uber.role">市场营销专员</span>
+                                </div>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="timeline-date" data-i18n="exp.uber.date">2015.04 - 2016.08</span>
+                                <span class="timeline-location" data-i18n="exp.uber.location">广州</span>
+                            </div>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="timeline-summary" data-i18n="exp.uber.summary">策划并落地10+创新营销活动，累计拉新用户超10万+</p>
+                            <div class="timeline-achievements">
+                                <div class="achievement">
+                                    <div class="achievement-icon" aria-hidden="true">
+                                        <!-- megaphone -->
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M19 9a4 4 0 0 1 0 6"/><path d="M16 7a7 7 0 0 1 0 10"/></svg>
+                                    </div>
+                                    <div class="achievement-content">
+                                        <h4 data-i18n="exp.uber.ach1.title">创新营销活动策划与执行</h4>
+                                        <p data-i18n="exp.uber.ach1.desc">策划并落地 10+ 创新营销活动（一键呼叫复仇者联盟、UBER PUPPIES 萌宠专车、UBER OFFER 面试车、万达 5 折狂欢等），将打车场景与热点 IP 跨界融合，引爆社交媒体传播。</p>
+                                    </div>
+                                </div>
+                                <div class="achievement">
+                                    <div class="achievement-icon" aria-hidden="true">
+                                        <!-- clipboard-check -->
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="m9 14 2 2 4-4"/></svg>
+                                    </div>
+                                    <div class="achievement-content">
+                                        <h4 data-i18n="exp.uber.ach2.title">活动全流程管理</h4>
+                                        <p data-i18n="exp.uber.ach2.desc">独立负责活动全流程：创意构思、宣传策划、视觉设计（部分）、跨部门协作执行，在资源有限的高压环境下确保每场活动高质量落地。</p>
+                                    </div>
+                                </div>
+                                <div class="achievement">
+                                    <div class="achievement-icon" aria-hidden="true">
+                                        <!-- users -->
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                    </div>
+                                    <div class="achievement-content">
+                                        <h4 data-i18n="exp.uber.ach3.title">用户增长</h4>
+                                        <p data-i18n="exp.uber.ach3.desc">累计拉新超 10 万+（截至 2015 年 10 月），为广州市场 UBER 用户规模快速增长做出核心贡献。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- UBER 视频展示 -->
+                            <div class="product-showcase">
+                                <div class="showcase-header">
+                                    <h4 class="showcase-title" data-i18n="exp.uber.videoTitle">活动视频</h4>
+                                    <span class="video-creator" data-i18n="exp.videoCredit">视频剪辑 by 严黎明</span>
+                                </div>
+                                <div class="video-grid">
+                                    <div class="video-card" role="button" tabindex="0"
+                                        onclick="openVideoModal('../other/project/UBER/UBER周年庆.mp4')"
+                                        onkeydown="handleVideoCardKey(event, '../other/project/UBER/UBER周年庆.mp4')">
+                                        <div class="video-thumbnail">
+                                            <img src="../other/project/UBER/uber-封面.jpg" alt="UBER周年庆">
+                                            <div class="play-button">▶</div>
+                                        </div>
+                                        <div class="video-info">
+                                            <span class="video-name" data-i18n="exp.uber.video.name">UBER周年庆 -
+                                                活动回顾</span>
+                                            <span class="video-tag" data-i18n="exp.uber.video.tag">营销活动</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能 -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title" data-i18n="skills.title">专业技能</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <span class="skill-icon" aria-hidden="true">
+                            <!-- lightbulb -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6M10 22h4"/></svg>
+                        </span>
+                        <span data-i18n="skills.product">产品技能</span>
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Sketch & Figma</span>
+                            <span class="skill-desc" data-i18n="skills.product.s1">UI规范设计</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name" data-i18n="skills.product.s2.name">AI PRD</span>
+                            <span class="skill-desc" data-i18n="skills.product.s2.desc">需求洞察 · PRD 全 AI 生成</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name" data-i18n="skills.product.s3.name">跨部门协作</span>
+                            <span class="skill-desc" data-i18n="skills.product.s3.desc">资源整合推动</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name" data-i18n="skills.product.s4.name">Prompt 工程</span>
+                            <span class="skill-desc" data-i18n="skills.product.s4.desc">策略裂变 · 效果调优</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name" data-i18n="skills.product.s6.name">PMF 验证</span>
+                            <span class="skill-desc" data-i18n="skills.product.s6.desc">客户洞察 · 数据驱动</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name" data-i18n="skills.product.s5.name">HTML 交互原型</span>
+                            <span class="skill-desc" data-i18n="skills.product.s5">AI 直出可跑通 Demo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <span class="skill-icon" aria-hidden="true">
+                            <!-- wrench -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        </span>
+                        <span data-i18n="skills.tools">工具技能</span>
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name" data-i18n="skills.tools.s1.name">Office全系列</span>
+                            <span class="skill-desc" data-i18n="skills.tools.s1.desc">文档处理</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">AE & PR</span>
+                            <span class="skill-desc" data-i18n="skills.tools.s2">视频制作</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">AI & PS</span>
+                            <span class="skill-desc" data-i18n="skills.tools.s3">平面设计</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <span class="skill-icon" aria-hidden="true">
+                            <!-- award -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
+                        </span>
+                        <span data-i18n="skills.certs">专业证书</span>
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item certificate">
+                            <span class="skill-name" data-i18n="skills.certs.pmp">PMP项目管理认证</span>
+                            <span class="skill-badge">5A</span>
+                        </div>
+                        <div class="skill-item certificate">
+                            <span class="skill-name" data-i18n="skills.certs.cpr">CPR+AED培训证书</span>
+                            <span class="skill-badge" data-i18n="skills.certs.cpr.badge">急救</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 教育背景 -->
+    <section class="section education" id="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title" data-i18n="edu.title">教育背景</h2>
+            </div>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-icon education-logo">
+                        <img src="../other/image/logo/哈尔滨工业大学.png" alt="哈尔滨工业大学">
+                    </div>
+                    <div class="education-content">
+                        <h3 data-i18n="edu.hit.name">哈尔滨工业大学</h3>
+                        <p class="education-degree" data-i18n="edu.hit.degree">MBA - 硕士</p>
+                        <p class="education-meta" data-i18n="edu.hit.meta">2025.08 - 2027.12 · 深圳</p>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <div class="education-icon education-logo">
+                        <img src="../other/image/logo/华南师范大学.png" alt="华南师范大学">
+                    </div>
+                    <div class="education-content">
+                        <h3 data-i18n="edu.scnu.name">华南师范大学</h3>
+                        <p class="education-degree" data-i18n="edu.scnu.degree">动漫设计与制作</p>
+                        <p class="education-meta" data-i18n="edu.scnu.meta">2012.09 - 2015.05 · 广州</p>
+                        <p class="education-extra" data-i18n="edu.scnu.extra">Enactus创行 - 品牌宣传技术经理</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-content">
+                    <h2 class="contact-title" data-i18n="contact.title">让我们一起创造价值</h2>
+                    <p class="contact-desc" data-i18n="contact.desc">期待与您的交流与合作</p>
+                </div>
+                <div class="contact-info">
+                    <a href="#" class="contact-item" id="contact-email">
+                        <div class="contact-icon" aria-hidden="true">
+                            <!-- mail -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="contact-label" data-i18n="contact.email">邮箱</span>
+                            <span class="contact-value" id="email-display" data-i18n="contact.clickShow">点击显示</span>
+                        </div>
+                    </a>
+                    <a href="#" class="contact-item" id="contact-phone">
+                        <div class="contact-icon" aria-hidden="true">
+                            <!-- phone -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="contact-label" data-i18n="contact.phone">电话</span>
+                            <span class="contact-value" id="phone-display" data-i18n="contact.clickShow">点击显示</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 视频弹窗模态框 -->
+    <div id="videoModal" class="video-modal" onclick="closeVideoModal(event)">
+        <div class="video-modal-content">
+            <button class="video-modal-close" onclick="closeVideoModal(event)">&times;</button>
+            <video id="modalVideo" controls>
+                <source id="modalVideoSource" src="" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p data-i18n="footer.copyright">© 2026 严黎明 (LeonYim). All rights reserved.</p>
+                <p class="footer-note" data-i18n="footer.note">Built with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
