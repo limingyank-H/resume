@@ -1,5 +1,8 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/V2/$1" }
+    { "source": "/", "destination": "/V2/index.html" },
+    { "source": "/i18n.js", "destination": "/V2/i18n.js" },
+    { "source": "/styles.css", "destination": "/V2/styles.css" },
+    { "source": "/script.js", "destination": "/V2/script.js" }
   ]
 }
