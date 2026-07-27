@@ -1771,3 +1771,27 @@ img {
 .video-modal-close:hover {
     opacity: 0.7;
 }
+
+/* ========================================
+   手机强制横屏
+   ======================================== */
+@media screen and (max-width: 900px) and (orientation: portrait) {
+    html, body {
+        width: 100vh;
+        height: 100vw;
+        overflow: hidden;
+    }
+
+    #app {
+        width: 100vh;
+        height: 100vw;
+        position: absolute;
+        top: 0;
+        left: 100vw;
+        transform: rotate(90deg);
+        transform-origin: top left;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+}
