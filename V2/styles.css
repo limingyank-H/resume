@@ -359,6 +359,14 @@ img {
     letter-spacing: 0.1em;
 }
 
+/* 移动端专属元素：桌面端默认隐藏，仅 ≤768px 显示 */
+.hero-role-mobile,
+.hero-pitch-mobile,
+.hero-pitchdesc-mobile,
+.hero-stats-mobile {
+    display: none;
+}
+
 /* 右侧专业信息区域 */
 .hero-aside {
     max-width: 320px;
@@ -1485,11 +1493,11 @@ img {
         max-width: 100%;
     }
 
-    /* greeting + name 压在图片底部（锚定图片底线，而非整个 hero 底部） */
+    /* greeting + name 压在图片底部（改用 bottom 定位避免英文名溢出） */
     .hero-greeting {
         position: absolute;
         left: 24px;
-        top: calc(var(--img-h) - 118px);
+        bottom: calc(100% - var(--img-h) + 20px);
         z-index: 3;
         color: rgba(255, 255, 255, 0.85);
         font-size: 0.8rem;
@@ -1502,7 +1510,7 @@ img {
         position: absolute;
         left: 24px;
         right: 24px;
-        top: calc(var(--img-h) - 88px);
+        bottom: calc(100% - var(--img-h) + 50px);
         z-index: 3;
         font-size: 2.6rem;
         margin: 0;
@@ -1514,25 +1522,65 @@ img {
         color: #fff;
     }
 
+    /* name-en + 角色副标题合成一行橙字：LeonYim · 产品经理 */
     .name-en {
+        display: inline;
         color: var(--primary-light);
         font-size: 1rem;
-        margin-top: 4px;
-        letter-spacing: 0.15em;
+        font-weight: 600;
+        margin-top: 0;
+        letter-spacing: 0.12em;
     }
 
-    /* 图片下方的内容区 */
-    .hero-title {
+    /* 英文态主名已是 "Leon Yim"，隐藏重复的 LeonYim 副名，只留 · Product Manager */
+    html[lang="en"] .name-en {
+        display: none;
+    }
+
+    html[lang="en"] .hero-role-mobile::before {
+        content: '';
+    }
+
+    .hero-role-mobile {
+        display: inline;
+        color: var(--primary-light);
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+    }
+
+    .hero-role-mobile::before {
+        content: ' · ';
+    }
+
+    /* 图片下方的内容区 —— 隐藏桌面版 title/desc/aside，改用 demo 的 pitch + 数据条 */
+    .hero-title,
+    .hero-desc,
+    .hero-aside {
+        display: none;
+    }
+
+    .hero-pitch-mobile {
+        display: block;
         font-size: 1.15rem;
+        font-weight: 700;
         line-height: 1.5;
-        padding: 26px 24px 0;
+        color: var(--text-primary);
+        padding: 28px 24px 0;
         margin: 0;
     }
 
-    .hero-desc {
+    .hero-pitch-mobile em {
+        font-style: normal;
+        color: var(--primary);
+    }
+
+    .hero-pitchdesc-mobile {
+        display: block;
         font-size: 0.9rem;
         line-height: 1.75;
-        padding: 12px 24px 0;
+        color: var(--text-secondary);
+        padding: 14px 24px 0;
         margin: 0;
     }
 
@@ -1541,21 +1589,45 @@ img {
         gap: 12px;
     }
 
+    /* demo 圆角矩形按钮（非胶囊） */
     .hero-buttons .btn {
         flex: 1;
         justify-content: center;
-        padding: 14px 20px;
+        padding: 15px 20px;
+        border-radius: 14px;
     }
 
-    /* 专注领域卡片移到底部 */
-    .hero-aside {
-        max-width: 100%;
-        margin: 26px 0 0;
-        padding: 0 24px;
+    /* 四格数据条 */
+    .hero-stats-mobile {
+        display: flex;
+        margin-top: 28px;
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
     }
 
-    .stat-card {
-        text-align: left;
+    .hsm-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 18px 4px;
+        border-right: 1px solid var(--border-color);
+    }
+
+    .hsm-item:last-child {
+        border-right: none;
+    }
+
+    .hsm-num {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--primary);
+    }
+
+    .hsm-lab {
+        font-size: 0.68rem;
+        color: var(--text-muted);
     }
 
     /* 隐藏滚动提示（封面式布局不需要） */
@@ -1565,8 +1637,13 @@ img {
 }
 
 @media (max-width: 480px) {
+    /* Hero 按钮保持 demo 的并排布局（不堆叠）；其余区块按钮仍全宽 */
     .hero-buttons {
-        flex-direction: column;
+        flex-direction: row;
+    }
+
+    .hero-buttons .btn {
+        width: auto;
     }
 
     .btn {
