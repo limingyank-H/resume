@@ -74,7 +74,14 @@
     <section class="hero" id="hero">
         <!-- 人物背景层 - 贯穿整个Hero -->
         <div class="hero-portrait-layer">
-            <img src="/other/image/portrait-beige.png" alt="严黎明" class="hero-portrait-bg">
+            <picture>
+                <!-- 手机端加载 14KB 的 WebP -->
+                <source media="(max-width: 768px)" type="image/webp" srcset="/other/image/portrait-beige-mobile.webp">
+                <!-- 桌面端加载 60KB 的 WebP -->
+                <source media="(min-width: 769px)" type="image/webp" srcset="/other/image/portrait-beige-desktop.webp">
+                <!-- 降级：旧浏览器用 JPEG -->
+                <img src="/other/image/portrait-beige-mobile.jpg" alt="严黎明" class="hero-portrait-bg">
+            </picture>
         </div>
 
         <!-- 内容层 - 覆盖在人物上 -->
