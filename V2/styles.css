@@ -1422,54 +1422,145 @@ img {
         padding: 40px 24px;
     }
 
-    /* Hero 移动端 - 人像置顶，文字在下 */
-    .hero-content-layer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 40px;
+    /* ===== Hero 移动端 · 杂志封面风 ===== */
+    /* 人像做成顶部全宽大图，名字压在图上，下方接内容 */
+    .hero {
+        --img-h: clamp(420px, 58vh, 560px);
+        min-height: auto;
+        display: block;
+        padding: 0;
+        background: var(--bg-page);
     }
 
-    .hero-main {
-        max-width: 100%;
-        order: 1;
-    }
-
-    .hero-aside {
-        max-width: 100%;
-        margin: 0 auto;
-        order: 2;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
+    /* 顶部全宽人像大图 */
     .hero-portrait-layer {
-        position: absolute;
-        top: 0;
-        left: 50%;
+        position: relative;
+        top: auto;
+        left: auto;
         right: auto;
-        transform: translateX(-50%);
+        transform: none;
         width: 100%;
-        height: 60%;
-        opacity: 0.35;
-        pointer-events: none;
+        height: var(--img-h);
+        display: block;
+        opacity: 1;
+        overflow: hidden;
+    }
+
+    .hero-portrait-layer::before {
+        display: none;
     }
 
     .hero-portrait-bg {
-        -webkit-mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
-        mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
-        -webkit-mask-composite: source-over;
-        mask-composite: add;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 12%;
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+
+    /* 图片底部渐变遮罩，让白字过渡自然 */
+    .hero-portrait-layer::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg,
+            rgba(47, 39, 31, 0) 35%,
+            rgba(47, 39, 31, 0.35) 62%,
+            rgba(47, 39, 31, 0.82) 100%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    /* 内容层改为纵向堆叠 */
+    .hero-content-layer {
+        display: block;
+        max-width: 100%;
+        margin: 0;
+        position: static;
+    }
+
+    /* 主内容：名字部分绝对定位压在图片底部，其余移到图下方 */
+    .hero-main {
+        max-width: 100%;
+    }
+
+    /* greeting + name 压在图片底部（锚定图片底线，而非整个 hero 底部） */
+    .hero-greeting {
+        position: absolute;
+        left: 24px;
+        top: calc(var(--img-h) - 118px);
+        z-index: 3;
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.8rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    .hero-name {
+        position: absolute;
+        left: 24px;
+        right: 24px;
+        top: calc(var(--img-h) - 88px);
+        z-index: 3;
+        font-size: 2.6rem;
+        margin: 0;
+    }
+
+    .name-highlight {
+        background: none;
+        -webkit-text-fill-color: #fff;
+        color: #fff;
+    }
+
+    .name-en {
+        color: var(--primary-light);
+        font-size: 1rem;
+        margin-top: 4px;
+        letter-spacing: 0.15em;
+    }
+
+    /* 图片下方的内容区 */
+    .hero-title {
+        font-size: 1.15rem;
+        line-height: 1.5;
+        padding: 26px 24px 0;
+        margin: 0;
+    }
+
+    .hero-desc {
+        font-size: 0.9rem;
+        line-height: 1.75;
+        padding: 12px 24px 0;
+        margin: 0;
+    }
+
+    .hero-buttons {
+        padding: 22px 24px 0;
+        gap: 12px;
+    }
+
+    .hero-buttons .btn {
+        flex: 1;
+        justify-content: center;
+        padding: 14px 20px;
+    }
+
+    /* 专注领域卡片移到底部 */
+    .hero-aside {
+        max-width: 100%;
+        margin: 26px 0 0;
+        padding: 0 24px;
     }
 
     .stat-card {
-        text-align: center;
+        text-align: left;
+    }
+
+    /* 隐藏滚动提示（封面式布局不需要） */
+    .hero-scroll-hint {
+        display: none;
     }
 }
 
