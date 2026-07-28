@@ -1493,11 +1493,11 @@ img {
         max-width: 100%;
     }
 
-    /* greeting 压在图片上、名字上方（name 底部上方 80px） */
+    /* greeting 和 name 用 top 定位，简单直接（相对 hero 顶部） */
     .hero-greeting {
         position: absolute;
         left: 24px;
-        bottom: calc(100% - var(--img-h) + 130px);
+        top: calc(var(--img-h) - 156px);
         z-index: 3;
         color: rgba(255, 255, 255, 0.85);
         font-size: 0.8rem;
@@ -1506,12 +1506,11 @@ img {
         margin: 0;
     }
 
-    /* name 底部距图片底 50px */
     .hero-name {
         position: absolute;
         left: 24px;
         right: 24px;
-        bottom: calc(100% - var(--img-h) + 50px);
+        top: calc(var(--img-h) - 118px);
         z-index: 3;
         font-size: 2.6rem;
         margin: 0;
